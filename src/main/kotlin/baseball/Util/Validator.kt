@@ -4,7 +4,7 @@ object Validator {
     fun validateDuplication(number: String) {
         val userInput = number.toSet()
         if (userInput.size != 3) {
-            throw IllegalArgumentException("3자리의 입력이 아닙니다.")
+            throw IllegalArgumentException("사용자의 입력 중 중복된 수가 존재합니다.")
         }
     }
 
