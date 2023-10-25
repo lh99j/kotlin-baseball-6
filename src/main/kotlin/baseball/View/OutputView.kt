@@ -22,4 +22,8 @@ class OutputView {
 
         println(result)
     }
+
+    fun printInputMessage() {
+        print("숫자를 입력해주세요 : ")
+    }
 }

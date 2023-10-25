@@ -9,6 +9,7 @@ class BaseBallController(private val inputView: InputView, private val outputVie
     fun gameStart() {
         outputView.printStartMessage()
         val computer = Computer()
+        outputView.printInputMessage()
         val user = inputView.inputUserNumber()
         val hint = BaseBall(computer.computerNumber, user)
         hint.compareStrikeAndBall()
