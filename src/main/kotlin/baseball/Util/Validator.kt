@@ -1,21 +1,24 @@
 package baseball.Util
 
+import baseball.Util.Constants.REGEX
+import baseball.Util.Constants.SIZE
+
 object Validator {
     fun validateLength(number: String) {
-        if (number.length != 3) {
+        if (number.length != SIZE) {
             throw IllegalArgumentException(ExceptionMessage.INVALID_LENGTH.getErrorMessage())
         }
     }
 
     fun validateDistinct(number: String) {
         val userInput = number.toSet()
-        if (userInput.size != 3) {
+        if (userInput.size != SIZE) {
             throw IllegalArgumentException(ExceptionMessage.INVALID_DISTINCTION.getErrorMessage())
         }
     }
 
     fun validateNumber(number: String) {
-        val regex = Regex("[1-9]{3}")
+        val regex = REGEX.toRegex()
         if (!regex.matches(number)) {
             throw IllegalArgumentException(ExceptionMessage.INVALID_NUMBER.getErrorMessage())
         }
