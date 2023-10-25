@@ -13,6 +13,8 @@ class BaseBall(private val computer: MutableList<Int>, private val user: List<In
         }
     }
 
+    fun isThreeStrike() = strike == SIZE
+
     private fun isBall(idx: Int): Int {
         if (computer[idx] != user[idx] && computer.contains(user[idx])) {
             return 1
