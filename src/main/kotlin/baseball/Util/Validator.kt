@@ -23,4 +23,12 @@ object Validator {
             throw IllegalArgumentException(ExceptionMessage.INVALID_NUMBER.getErrorMessage())
         }
     }
+
+    fun validateStatue(number: String){
+        if(number == "1" || number == "2"){
+            return
+        }
+
+        throw IllegalArgumentException(ExceptionMessage.INVALID_STATUS.getErrorMessage())
+    }
 }

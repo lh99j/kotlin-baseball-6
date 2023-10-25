@@ -7,11 +7,12 @@ import baseball.View.OutputView
 
 class BaseBallController(private val inputView: InputView, private val outputView: OutputView) {
     fun gameStart() {
-        val computer = Computer()
+        var computer = Computer()
         outputView.printStartMessage()
         var gameStatus = true
 
         while (gameStatus) {
+            println(computer.computerNumber.toList().toString())
             val user = userInput()
             val hint = BaseBall(computer.computerNumber, user)
             hint.compareStrikeAndBall()
@@ -19,6 +20,11 @@ class BaseBallController(private val inputView: InputView, private val outputVie
 
             if (hint.isThreeStrike()) {
                 outputView.printEndMessage()
+                val status = inputView.inputGameStatus()
+                if (status == "1") {
+                    computer = Computer()
+                    continue
+                }
                 break
             }
         }
