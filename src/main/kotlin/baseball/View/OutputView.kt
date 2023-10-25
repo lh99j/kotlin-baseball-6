@@ -1,6 +1,9 @@
 package baseball.View
 
 import baseball.Model.BaseBall
+import baseball.Util.Constants.BALL
+import baseball.Util.Constants.NOTHING
+import baseball.Util.Constants.STRIKE
 
 class OutputView {
     fun printStartMessage() {
@@ -11,10 +14,10 @@ class OutputView {
         val ball = baseBall.ball
         val strike = baseBall.strike
         val result = when {
-            ball == 0 && strike == 0 -> "낫싱"
-            ball > 0 && strike == 0 -> "${ball}볼"
-            ball == 0 && strike > 0 -> "${strike}스트라이크"
-            else -> "${ball}볼 ${strike}스트라이크"
+            ball == 0 && strike == 0 -> NOTHING
+            ball > 0 && strike == 0 -> "$ball$BALL"
+            ball == 0 && strike > 0 -> "$strike$STRIKE"
+            else -> "$ball$BALL $strike$STRIKE"
         }
 
         println(result)
