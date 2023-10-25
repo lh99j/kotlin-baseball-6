@@ -1,6 +1,12 @@
 package baseball.Util
 
 object Validator {
+    fun validateLength(number: String) {
+        if (number.length != 3) {
+            throw IllegalArgumentException("사용자의 입력이 3자리가 아닙니다.")
+        }
+    }
+
     fun validateDuplication(number: String) {
         val userInput = number.toSet()
         if (userInput.size != 3) {
