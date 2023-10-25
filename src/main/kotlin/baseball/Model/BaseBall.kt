@@ -8,11 +8,22 @@ class BaseBall(private val computer: MutableList<Int>, private val user: List<In
 
     fun compareStrikeAndBall() {
         for (i in 0 until SIZE) {
-            if (computer[i] == user[i]) {
-                strike++
-            } else if (computer.contains(user[i])) {
-                ball++
-            }
+            strike += isStrike(i)
+            ball += isBall(i)
         }
+    }
+
+    private fun isBall(idx: Int): Int {
+        if (computer[idx] != user[idx] && computer.contains(user[idx])) {
+            return 1
+        }
+        return 0
+    }
+
+    private fun isStrike(idx: Int): Int {
+        if (computer[idx] == user[idx]) {
+            return 1
+        }
+        return 0
     }
 }
