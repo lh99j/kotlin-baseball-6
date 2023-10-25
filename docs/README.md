@@ -44,3 +44,26 @@ Model : 데이터 관련 로직 처리
 Controller : Model 과 Controller의 중재자 역할
 View : 사용자에게 보여지는 부분
 ```
+
+<br><br>
+
+# 프로젝트 구조
+
+```
+∙ BaseBallController : 숫자야구 게임 로직 수행
+	◦ InputView, OutputView 를 생성자로 받아온다.
+
+∙ BaseBall(Model) : 스트라이크, 볼 관련 데이터 로직 수행
+∙ Computer(Model) : 컴퓨터 숫자 관련 로직 수행
+
+∙ Constants(object) : 불변값 관리하는 클래스
+∙ ExceptionMessage(enum class) : Exception 메세지 관리
+∙ Validator(object) : 유효값 검증 로직 수행하는 함수
+
+∙ InputView(View) : 입력 관련 View
+∙ OutputView(View) : 사용자에게 보여지는 View
+```
+
+<br><br>
+
+현재까지는 이런식으로 프로젝트를 나누었지만 BaseBallController의 너무 긴 로직과 더이상 어떤식으로 나눠야할지 모르겠다. 하나하나 더 잘게 쪼개기 위한 공부 필요.
