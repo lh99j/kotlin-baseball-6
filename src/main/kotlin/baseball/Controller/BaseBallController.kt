@@ -12,5 +12,6 @@ class BaseBallController(private val inputView: InputView, private val outputVie
         val user = inputView.inputUserNumber()
         val hint = BaseBall(computer.computerNumber, user)
         hint.compareStrikeAndBall()
+        outputView.printHint(hint)
     }
 }
