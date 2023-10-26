@@ -1,6 +1,8 @@
 package baseball.Util
 
+import baseball.Util.Constants.QUIT
 import baseball.Util.Constants.REGEX
+import baseball.Util.Constants.RESTART
 import baseball.Util.Constants.SIZE
 
 object Validator {
@@ -24,8 +26,8 @@ object Validator {
         }
     }
 
-    fun validateStatue(number: String){
-        if(number == "1" || number == "2"){
+    fun validateStatue(number: String) {
+        if (number == RESTART || number == QUIT) {
             return
         }
 

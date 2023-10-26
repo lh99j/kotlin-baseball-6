@@ -9,5 +9,5 @@ fun main() {
     val inputView = InputView()
     val outputView = OutputView()
     val baseBallController = BaseBallController(inputView, outputView)
-    baseBallController.gameStart()
+    baseBallController.run()
 }
