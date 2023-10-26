@@ -11,18 +11,13 @@ class Computer() {
     val computerNumber: MutableList<Int>
         get() = _computerNumber
 
-    init {
-        _computerNumber = setComputerNumber()
-    }
-
-    private fun setComputerNumber(): MutableList<Int> {
-        val computer = mutableListOf<Int>()
-        while (computer.size < SIZE) {
+    fun setComputerNumber() {
+        _computerNumber = mutableListOf<Int>()
+        while (_computerNumber.size < SIZE) {
             val randomNumber = Randoms.pickNumberInRange(START_NUMBER, END_NUMBER)
-            if (!computer.contains(randomNumber)) {
-                computer.add(randomNumber)
+            if (!_computerNumber.contains(randomNumber)) {
+                _computerNumber.add(randomNumber)
             }
         }
-        return computer
     }
 }

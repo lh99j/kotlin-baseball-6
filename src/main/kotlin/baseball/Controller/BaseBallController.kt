@@ -6,9 +6,10 @@ import baseball.View.InputView
 import baseball.View.OutputView
 
 class BaseBallController(private val inputView: InputView, private val outputView: OutputView) {
+    private var computer = Computer()
     fun gameStart() {
-        var computer = Computer()
         outputView.printStartMessage()
+        computer.setComputerNumber()
         var gameStatus = true
 
         while (gameStatus) {
